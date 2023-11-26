@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 // importing all routes
 const userRouter = require('./routes/userRoute')
@@ -14,6 +15,7 @@ const MONGO_URL = process.env.MONGO_URL
 
 // To take json as input
 app.use(express.json())
+app.use(cors())
 
 // Ejs template engine setup
 app.set('view engine', 'ejs')
