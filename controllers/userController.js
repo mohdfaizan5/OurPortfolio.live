@@ -19,18 +19,17 @@ const getUser = asyncHandler(async (req, res) => {
       console.log('not found')
     }
     else {
-
       console.log('found user')
-      // res.json(foundUser)
       res.render('portfolio/p1', {
         username: foundUser.username,
-        profilePic : null
+        profilePic: null
       })
     }
 
   }
   catch (error) {
-    console.log(error)
+    res.status(500);
+    throw new Error(error.message);
   }
 })
 
@@ -53,28 +52,29 @@ const deleteUser = async (req, res) => {
     }
   }
   catch (error) {
-    console.log(error.message)
+    res.status(500)
+    throw new Error(error.message)
   }
 
 }
 
 
-const updateUser = async(req, res)=>{
-  try{
-    const {username} = req.params
+const updateUser = async (req, res) => {
+  try {
+    const { username } = req.params
     console.log(username, req.body)
-    const updatedUser = await userModel.findOneAndUpdate({username: username}, req.body)
-    
-    if(updatedUser){
+    const updatedUser = await userModel.findOneAndUpdate({ username: username }, req.body)
+
+    if (updatedUser) {
       console.log(`updated user ${updatedUser}`)
-      
+
     }
-    else{
+    else {
       console.log(`can't find user ${updatedUser} to update`)
 
     }
   }
-  catch(error){
+  catch (error) {
     console.log(error)
   }
 }
@@ -93,4 +93,4 @@ const createUser = async (req, res) => {
   }
 }
 
-module.exports = {getUser, deleteUser, updateUser, createUser}
+module.exports = { getUser, deleteUser, updateUser, createUser }

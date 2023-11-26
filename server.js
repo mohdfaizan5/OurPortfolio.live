@@ -4,7 +4,7 @@ const app = express()
 
 // importing all routes
 const userRouter = require('./routes/userRoute')
-const { default: mongoose } = require('mongoose')
+const { default: mongoose } = require('mongoose');
 
 const errorMid = require('./middlewares/errorMid')
 
@@ -21,10 +21,10 @@ app.set('view engine', 'ejs')
 // Setup static
 app.use(express.static('./public'))
 
-// app.get('/', (req, res)=>{
-//   throw new Error("HI ---");
+app.get('/error', (req, res)=>{
+  throw new Error("HI ---");
 
-// })
+})
 
 app.use(errorMid);
 app.use('/', userRouter)
