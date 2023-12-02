@@ -4,6 +4,7 @@ const app = express()
 const cors = require('cors')
 
 // importing all routes
+const generalRouter = require('./routes/general')
 const userRouter = require('./routes/userRoute')
 const { default: mongoose } = require('mongoose');
 
@@ -29,6 +30,7 @@ app.get('/error', (req, res)=>{
 })
 
 app.use(errorMid);
+app.use('/', generalRouter)
 app.use('/', userRouter)
 
 

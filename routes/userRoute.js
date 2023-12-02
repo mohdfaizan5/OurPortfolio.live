@@ -12,7 +12,7 @@ const {createUser, updateUser, deleteUser, getUser} = require('../controllers/us
 
 // Basic routing
 router.get('/', (req, res) => {
-  res.send('API working')
+  res.render('landingpage')
 })
 
 // S2: Reading a user
