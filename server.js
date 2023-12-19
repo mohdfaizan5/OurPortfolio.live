@@ -24,7 +24,7 @@ app.set('view engine', 'ejs')
 // Setup static
 app.use(express.static('./public'))
 
-app.get('/error', (req, res)=>{
+app.get('/error', (req, res) => {
   throw new Error("HI ---");
 
 })
@@ -32,6 +32,7 @@ app.get('/error', (req, res)=>{
 app.use(errorMid);
 app.use('/', generalRouter)
 app.use('/', userRouter)
+
 
 
 // Listening to port

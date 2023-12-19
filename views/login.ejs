@@ -1,53 +1,71 @@
-<!DOCTYPE html>			
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>			
-    <meta charset="UTF-8">			
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">			
-    <title>SignUp | OurPortfolio</title>			
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | OurPortfolio</title>
 
-    <!-- FavIcon -->			
-    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    
-    
-    <script src='https://cdn.tailwindcss.com'></script>
+  <!-- FavIcon -->
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    <!-- JS -->			
-    <script src="/js/main.js" defer></script>			
-  </head>		
 
-<body class="flex flex-col items-center justify-center h-[90vh]">			
-  <header>			
-    <nav>			
-    </nav>			
-  </header>			
+  <script src='https://cdn.tailwindcss.com'></script>
 
-  <main class=" border w-[330px] flex flex-col items-center py-[80px] gap-2 shadow-2xl rounded-2xl">			
-    <h1 class=" font-semibold text-4xl mb-10">Login</h1>
-   <form action="post" class="flex flex-col items-center gap-3">
-    <label for="username">
-      Username
-      <br>
-      <input type="text" name="username" class="border border-black p-1 rounded-md">
-    </label>
+  <!-- JS -->
+  <script src="/js/main.js" defer></script>
+</head>
 
-    <label for="password">
-      Password
-      <br>
-      <input type="password" name="password" class="border border-black p-1 rounded-md">
-    </label>
-    <button class="bg-black text-white px-5 py-2 rounded-full">
-      Login
-      <i class="ri-arrow-right-line text-white"></i>
-    </button>
-    <!-- <input class="" type="submit" value="Login "> -->
-   </form>
-  </main>			
+<body class="flex flex-col items-center justify-center h-[90vh] bg-[#E7DBFF]">
+  <!-- <header class="flex justify-between items-center p-5 px-10 border-black border-b-xl gap-10">
 
-  <footer>			
 
-  </footer>			
+    <div>
+      <button class="bg-black text-white px-4 py-2 rounded-full">SignUp</button>
+    </div>
+  </header> -->
 
-</body>			
-</html>			
+
+  <main class=" border w-[330px] flex flex-col items-center py-[40px] gap-10 shadow-2xl rounded-2xl">
+    <div>
+      <a href="/" class="text-3xl">
+        <i class="ri-blaze-line text-4xl"></i>
+        OurPortfolio
+      </a>
+    </div>
+    <form action="post" class="flex flex-col items-center gap-4">
+      <label for="username">
+        Username
+        <br>
+        <input type="text" name="username" class="border border-black p-1 rounded-md">
+      </label>
+
+      <label for="password">
+        Password
+        <br>
+        <input type="password" name="password" class="border border-black p-1 rounded-md">
+      </label>
+      <button class="bg-black text-white px-5 py-2 rounded-full hover:bg-slate-950 group">
+        Login
+        <i class="ri-arrow-right-line text-white group-hover:translate-x-3 group-hover:text-red-900"></i>
+      </button>
+      <div class="flex flex-col items-center">
+        <p>
+          Dont have an account
+
+        </p>
+        <a href="" class="underline text-slate-600"> SignUp</a>
+      </div>
+
+      <!-- <input class="" type="submit" value="Login "> -->
+    </form>
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>

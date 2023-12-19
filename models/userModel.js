@@ -7,22 +7,27 @@ const userModel = new mongoose.Schema(
       required: true,
       unique: true
     },
-    // name: [
-    //   { first: String },
-    //   { last: String }
-    // ],
-    // description: {
-    //   type: string,
-    // },
-    // password: {
-    //   type: password,
-    //   required: true
-    // },
-    // socails: [
-    //   {email: String},
-    //   {linkedIn: String},
-
-    // ]
+    designation: String,
+    name: [
+      { first: String },
+      { last: String }
+    ],
+    description: {
+      type: String,
+    },
+    password: {
+      type: String,
+      required: true
+    },
+    socails: [
+      { email: String },
+      { linkedIn: String },
+      { resume: String }
+    ],
+    theme: {
+      type: Number,
+      default : 1
+    }
 
     // insta, 
     // Achievements, Testimonials, profile pic, 
