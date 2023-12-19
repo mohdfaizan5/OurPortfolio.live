@@ -1,18 +1,12 @@
-# Our Portfolio Startup
-
-## Tech Stact 
-
-MongoDB
-Express
-EJS, Tailwind and other,
-Node.js
+# OurPortfolio.live
 
 
-## Inspiration
-https://dribbble.com/shots/22532468-Business-Landing-Page
+## Tech Stack
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=mongodb,express,nodejs,react,tailwind&perline=7" />
+  </a>
+</p>
 
-## Colors:
+******************************************************************************************
 
-home bg gradient - [#E7DBFF - #E7DBFF]
-purple - #C4B7E5
-pink rgb(238,140,141)
