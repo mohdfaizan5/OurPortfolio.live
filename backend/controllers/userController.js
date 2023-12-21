@@ -1,12 +1,10 @@
-const userModel = require('../models/userModel')
+// const userModel = require('../models/userModel')
+import userModel from "../models/userModel.js"
+import asyncHandler from "express-async-handler"
 
-const asyncHandler = require('express-async-handler')
 
 const getUser = asyncHandler(async (req, res) => {
-  // res.status(500);
-  // throw new Error('This is fake🐍🐍🐍')
   try {
-
     // getting user out from URL parameter
     const { username } = req.params
 
@@ -20,10 +18,17 @@ const getUser = asyncHandler(async (req, res) => {
     }
     else {
       console.log('found user')
-      res.render('portfolio/p1', {
-        username: foundUser.username,
-        profilePic: null
-      })
+      res.json(
+        {
+          username: foundUser.username,
+          name: foundUser.name,
+          aboutMe: foundUser.aboutMe,
+          jobTitle: foundUser.jobTitle,
+          shortDescription: foundUser.shortDescription,
+          socails: foundUser.socails
+        }
+
+      )
     }
 
   }
@@ -32,6 +37,7 @@ const getUser = asyncHandler(async (req, res) => {
     throw new Error(error.message);
   }
 })
+
 
 const deleteUser = async (req, res) => {
 
@@ -42,13 +48,13 @@ const deleteUser = async (req, res) => {
 
     if (deletedUser) {
 
-      res.status(200).json({ message: `Deleted user`, deletedUser })
+      res.status(200).json({ success: true, message: `Deleted user`, deletedUser })
       // console.log("didn't find user to delete -"+username)
     }
     else {
 
-      res.status(404).json({ message: `user not found ${username}` })
-      console.log("deleting user -" + username)
+      res.status(404).json({ success: false, message: `user not found ${username}` })
+      // console.log("deleting user -" + username)
     }
   }
   catch (error) {
@@ -62,35 +68,36 @@ const deleteUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const { username } = req.params
-    console.log(username, req.body)
-    const updatedUser = await userModel.findOneAndUpdate({ username: username }, req.body)
+    const updatedUser = await userModel.findOneAndUpdate({ username }, req.body)
 
     if (updatedUser) {
-      console.log(`updated user ${updatedUser}`)
-
+      res.status(201).json({ success: true, message: "User updated succesfully", ...updatedUser })
+      // console.log(`updated user ${updatedUser}`)
     }
     else {
-      console.log(`can't find user ${updatedUser} to update`)
+      res.status(401).json({ success: false, message: `Can't find User ${updatedUser}` })
+      // console.log(`can't find user ${updatedUser} to update`)
 
     }
   }
   catch (error) {
-    console.log(error)
+    res.status(401).json({ success: false, message: error.message })
   }
 }
+
 
 const createUser = async (req, res) => {
 
-
   try {
+    // console.log("created user", req.body)
     const userData = req.body
     const createdUser = await userModel.create(userData)
-    res.status(200).json(createdUser)
+    res.status(200).json({ message: "User Created succesfully", success: true, ...createdUser['_doc'] })
   }
 
   catch (error) {
-    res.status(500).json(error.message)
+    res.status(500).json({ success: false, message: error.message })
   }
 }
 
-module.exports = { getUser, deleteUser, updateUser, createUser }
+export { getUser, deleteUser, updateUser, createUser }

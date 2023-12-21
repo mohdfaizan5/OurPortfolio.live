@@ -1,21 +1,22 @@
-require('dotenv').config()
-const express = require('express')
+import 'dotenv/config'
+import { default as mongoose } from 'mongoose'
+
+import express, { json } from 'express'
 const app = express()
-const cors = require('cors')
+import cors from 'cors'
 
 // importing all routes
-const generalRouter = require('./routes/general')
-const userRouter = require('./routes/userRoute')
-const { default: mongoose } = require('mongoose');
+import generalRouter from './routes/general.js'
+import userRouter from './routes/userRoute.js'
+import errorMid from './middlewares/errorMid.js'
 
-const errorMid = require('./middlewares/errorMid')
 
 // 
 const PORT = process.env.PORT
 const MONGO_URL = process.env.MONGO_URL
 
 // To take json as input
-app.use(express.json())
+app.use(json())
 app.use(cors())
 
 // Ejs template engine setup
@@ -24,7 +25,7 @@ app.set('view engine', 'ejs')
 // Setup static
 app.use(express.static('./public'))
 
-app.get('/error', (req, res)=>{
+app.get('/error', (req, res) => {
   throw new Error("HI ---");
 
 })

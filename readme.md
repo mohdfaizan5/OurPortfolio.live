@@ -36,3 +36,9 @@ The focus is on user accessibility and convenience, ensuring that individuals, r
 
 
 ---
+
+
+How to use custom fonts in css
+```
+https://www.youtube.com/watch?v=arfDRUIZOiw&pp=4AQB&pbjreload=102&ab_channel=NetNinja
+```

@@ -1,10 +1,10 @@
-const express = require('express')
-const router = express.Router()
+import { Router } from 'express'
+const router = Router()
 
 // Importing middleware
 
 // Importing controllers
-const {createUser, updateUser, deleteUser, getUser} = require('../controllers/userController')
+import { createUser, updateUser, deleteUser, getUser } from '../controllers/userController.js'
 
 
 
@@ -28,4 +28,4 @@ router.delete('/:username', deleteUser)
 router.put('/:username', updateUser)
 
 // Exporting all routes
-module.exports = router;
+export default router;
