@@ -1,8 +1,11 @@
 # OurPortfolio.live
+## Convert your ugly github
+![Frame 2](https://github.com/mohdfaizan5/OurPortfolio.live/assets/79694828/c07ca8ce-2632-4a70-be31-17bc3343788f)
 
 The project aims to simplify the process of creating, updating, managing, and hosting portfolios, providing a seamless and hassle-free experience. Currently I have implemented as an API, the system incorporates fundamental CRUD (Create, Read, Update, Delete) functionalities, allowing users to effortlessly interact with their portfolios and share them with other forks and potential employeer and clients.
 
 The focus is on user accessibility and convenience, ensuring that individuals, regardless of their technical background, can easily showcase their work and achievements. Future upgrades are planned to add feature to select custom portfolio designs and themes, providing a robust environment for individuals to present their skills and projects effectively. Moreover my solution it not only facilitates portfolio creation but also streamlines the process of making these portfolios publicly accessible. As the project evolves, it promises to empower users to establish a professional online presence with minimal effort, aligning with the overarching goal of providing a user-centric and efficient portfolio management system.
+![image](https://github.com/mohdfaizan5/OurPortfolio.live/assets/79694828/17953602-adc3-4125-a80a-f7ab25c55bd0)
 
 ## Tech Stack
 
